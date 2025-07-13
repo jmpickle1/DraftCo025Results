@@ -18,7 +18,8 @@ st.set_page_config(
 # ---------------------------------------------------
 # Load Data (CSV)
 # ---------------------------------------------------
-csv_path = r"/Users/jacobpickle/Documents/RPM/Python Migration/2025 Draft Class Athletic Testing Model Results.csv"
+csv_path = "2025 Draft Class Athletic Testing Model Results.csv"
+
 
 try:
     proday2025 = pd.read_csv(csv_path)
