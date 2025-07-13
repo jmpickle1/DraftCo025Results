@@ -72,8 +72,8 @@ if search_name:
     filtered_base = filtered_base[filtered_base['Name'].str.contains(search_name, case=False, na=False)]
 
 # Ensure numeric conversion on filtered data for relevant columns before styling
-larger_better_cols = ['Height', 'Weight', 'Arm_Length', 'Vertical_Leap', 'BroadJump', 'Predicted Career APY']
-smaller_better_cols = ['FortyYardDash', 'Shuttle', 'ThreeCone']
+larger_better_cols = ['Height', 'Weight', 'Arm_Length', 'vert_leap', 'broad_jump', 'Predicted Career APY']
+smaller_better_cols = ['forty_yard', 'Shuttle', 'three_cone']
 
 for col in larger_better_cols + smaller_better_cols:
     if col in filtered_base.columns:
