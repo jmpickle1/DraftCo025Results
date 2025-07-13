@@ -159,7 +159,7 @@ with tab1:
         st.altair_chart(chart, use_container_width=True)
 
 with tab2:
-    st.title("📊 Custom Charts")
+    st.title("Custom Leaderboards")
 
     pos_for_chart = st.selectbox("Select Position for Chart", positions)
     stat_for_chart = st.selectbox("Select Statistic", numeric_cols)
