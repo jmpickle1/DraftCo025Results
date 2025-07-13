@@ -206,7 +206,7 @@ with tab3:
             # Define stats to evaluate (numeric columns only, exclude Name, School, Position)
             report_stats = [col for col in proday2025.columns if col not in ['Name', 'School', 'Position'] and pd.api.types.is_numeric_dtype(proday2025[col])]
 
-            speed_stats = ['FortyYardDash', 'Shuttle', 'ThreeCone']
+            speed_stats = ['forty_yard', 'Shuttle', 'three_cone']
 
             # Calculate percentiles for each stat for this player within their position group
             percentiles = {}
@@ -217,13 +217,13 @@ with tab3:
                 if pd.isna(player_stat_value):
                     percentiles[stat] = None
                 else:
-                    raw_perc = stats.percentileofscore(stat_values, player_stat_value)
+                    raw_perc = stats.percentileofscore(stat_values, player_stat_value) / 100  # convert to 0-1 scale
                     # Flip percentile for speed stats (lower is better)
                     if stat in speed_stats:
-                        perc = 100 - raw_perc
+                        perc = 1 - raw_perc
                     else:
                         perc = raw_perc
-                    percentiles[stat] = round(perc, 1)
+                    percentiles[stat] = round(perc * 100, 1)
 
             # Build a DataFrame for display
             report_df = pd.DataFrame({
