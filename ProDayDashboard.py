@@ -18,7 +18,7 @@ st.set_page_config(
 # ---------------------------------------------------
 # Load Data (CSV)
 # ---------------------------------------------------
-csv_path = "2025 Draft Class Athletic Testing Model Results.csv"
+csv_path = "Original Model 2025 Draft Class Athletic Testing Model Results.csv"
 
 
 try:
